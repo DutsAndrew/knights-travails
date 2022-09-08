@@ -15,14 +15,16 @@ body {
 
 #game-board-text {
   display: flex;
-  margin: none;
+  margin: auto;
   margin-top: 1%;
-  width: 100vw;
+  margin-bottom: 4%;
+  width: 90vw;
   height: 3vh;
   justify-content: center;
   align-items: center;
   font-size: 1em;
   color: white;
+  border-bottom: 1px solid yellow;
 }
 
 #game-board {
@@ -42,7 +44,6 @@ body {
   margin: 0;
   width: 80vw;
   height: 7.5vh;
-  background-color: green;
 }
 
 .chess-cell {
@@ -58,4 +59,24 @@ body {
 
 .white-cell {
   background-color: white;
+}
+
+.knight-current {
+  background: yellow center no-repeat url('../assets/chess-knight.svg');
+}
+
+#output-box {
+  display: flex;
+  margin: none;
+  margin-top: 1%;
+  width: 100vw;
+  height: 3vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: white;
+}
+
+.selected-cell {
+  background-color: yellow;
 }
