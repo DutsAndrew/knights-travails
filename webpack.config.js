@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
     new HtmlWebpackPlugin({
       filename: 'index.html',
       title: 'Knights Travails',
+      favicon: './src/assets/chess-knight.svg',
     })
   ],
    output: {

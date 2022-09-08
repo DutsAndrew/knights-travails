@@ -23,21 +23,31 @@ function buildDOM() {
 
   _buildChessCells(gameBoard);
 
+  function _buildChessCells(gameBoard) {
+    for (let row = 0; row < 8; row++) {
+      let chessRow = document.createElement('div');
+        chessRow.classList.add('chess-row');
+      
+      for (let cell = 0; cell < 8; cell++) {
+        let chessCell = document.createElement('div');
+          chessCell.classList.add('chess-cell');
+
+        // procedure for marking chess board cells as black or white
+        if (row % 2 === 0) {
+          if (cell % 2 === 0) chessCell.classList.add('white-cell');
+          if (cell % 2 !== 0) chessCell.classList.add('black-cell');
+        } else if (row % 2 !== 0) {
+          if (cell % 2 === 0) chessCell.classList.add('black-cell');
+          if (cell % 2 !== 0) chessCell.classList.add('white-cell');
+        }
+
+        chessRow.appendChild(chessCell);
+      }
+      gameBoard.appendChild(chessRow);
+    }
+  }
+
   body.appendChild(gameBoardTitle);
   body.appendChild(gameBoardText);
   body.appendChild(gameBoard);
-}
-
-function _buildChessCells(gameBoard) {
-  for (let row = 0; row < 8; row++) {
-    let chessRow = document.createElement('div');
-      chessRow.classList.add('chess-row');
-    
-    for (let cell = 0; cell < 8; cell++) {
-      let chessCell = document.createElement('div');
-        chessCell.classList.add('chess-cell');
-        chessRow.appendChild(chessCell);
-    }
-    gameBoard.appendChild(chessRow);
-  }
 }
