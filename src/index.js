@@ -1,4 +1,4 @@
-import { knightsTravailsController } from './scripts/knights-travails';
+import { knightsTravailsController } from './scripts/dom';
 import './stylesheets/style.css';
 
 window.onload = () => {
