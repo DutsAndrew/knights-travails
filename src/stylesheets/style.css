@@ -96,3 +96,9 @@ body {
 .selected-cell {
   background-color: yellow;
 }
+
+.knights-path {
+  background-color: red;
+  color: white;
+  font-size: 2em;
+}

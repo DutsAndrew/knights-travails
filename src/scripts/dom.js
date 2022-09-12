@@ -124,9 +124,23 @@ function displayKnightsTour(path) {
 
   if (output.textContent.length !== 39) {
     output.textContent = outputBaseMessage;
+    const knightsPath = document.querySelectorAll('.knights-path');
+    knightsPath.forEach(path => {
+      path.classList.remove('knights-path');
+      path.textContent = '';
+    })
   }
 
   path.forEach(path => {
     output.textContent += ` [${path}]`;
   })
+
+  let pathCounter = 1;
+  path.forEach(path => {
+    const nextStep = document.getElementById(`cell-[${path}]`);
+    nextStep.classList.add('knights-path');
+    nextStep.textContent = `${pathCounter}`;
+    pathCounter++;
+  })
+  pathCounter = 0;
 }
