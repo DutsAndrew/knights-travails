@@ -3,7 +3,8 @@ import { knightsTravails } from './knights-travails';
 
 export {
   knightsTravailsController,
-  findCoordinates
+  findCoordinates,
+  displayKnightsTour,
 }
 
 function knightsTravailsController() {
@@ -74,7 +75,7 @@ function buildDOM() {
 
   const outputBox = document.createElement('caption');
     outputBox.setAttribute('id', 'output-box');
-    outputBox.textContent = 'Moves needed to get to selected square:';
+    outputBox.textContent = 'Moves needed to get to selected square: ';
 
   body.appendChild(gameBoardTitle);
   body.appendChild(gameBoardText);
@@ -115,4 +116,17 @@ function findCoordinates() {
   const knightDesired = document.querySelector('#desired-location');
   const desiredCoordinates = JSON.parse(knightDesired.textContent.slice(-6));
   return [currentCoordinates, desiredCoordinates];
+}
+
+function displayKnightsTour(path) {
+  const output = document.querySelector('#output-box');
+  const outputBaseMessage = 'Moves needed to get to selected square: ';
+
+  if (output.textContent.length !== 39) {
+    output.textContent = outputBaseMessage;
+  }
+
+  path.forEach(path => {
+    output.textContent += ` [${path}]`;
+  })
 }
